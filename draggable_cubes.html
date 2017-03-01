@@ -86,8 +86,8 @@
                 renderer.shadowMap.type = THREE.PCFShadowMap;
                 container.appendChild( renderer.domElement );
                 var dragControls = new THREE.DragControls( objects, camera, renderer.domElement );
-                dragControls.addEventListener( 'dragstart', function ( event ) { controls.enabled = true; } );
-                dragControls.addEventListener( 'dragend', function ( event ) { controls.enabled = true; } );
+                dragControls.addEventListener( 'dragstart', function ( event ) { controls.track.enabled = true; } );
+                dragControls.addEventListener( 'dragend', function ( event ) { controls.track.enabled = true; } );
                 var info = document.createElement( 'div' );
                 info.style.position = 'absolute';
                 info.style.top = '10px';
