@@ -21,7 +21,7 @@
         <script src="js/libs/stats.min.js"></script>
         <script>
             var container, stats;
-            var camera, controls, scene, renderer;
+            var camera, controls, scene, renderer, orientationControls;
             var objects = [];
             init();
             animate();
@@ -38,9 +38,10 @@
                 };
 
                 //controls
-                controls = new THREE.DeviceOrientationControls( camera );
-                controls.rotateSpeed = 1.0;
-                controls.zoomSpeed = 1.0;
+                controls = new THREE.TrackballControls( camera );
+                orientationControls = new THREE.DeviceOrientationControls( camera );
+                controls.rotateSpeed = 1.2;
+                controls.zoomSpeed = 1.3;
                 controls.panSpeed = 0.8;
                 controls.noZoom = false;
                 controls.noPan = false;
@@ -86,7 +87,7 @@
                 renderer.shadowMap.type = THREE.PCFShadowMap;
                 container.appendChild( renderer.domElement );
                 var dragControls = new THREE.DragControls( objects, camera, renderer.domElement );
-                dragControls.addEventListener( 'dragstart', function ( event ) { controls.enabled = false; } );
+                dragControls.addEventListener( 'dragstart', function ( event ) { controls.enabled = true; } );
                 dragControls.addEventListener( 'dragend', function ( event ) { controls.enabled = true; } );
                 var info = document.createElement( 'div' );
                 info.style.position = 'absolute';
