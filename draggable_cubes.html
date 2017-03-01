@@ -33,16 +33,15 @@
                 //add
                 var animate = function(){
                     window.requestAnimationFrame( animate );
-                    controls.update();
+                    controls.orientation.update();
                     renderer.render(scene, camera);
                 };
-
+                
                 //controls
-                controls = new THREE.DeviceOrientationControls( camera );
-                orientationControls = new THREE.TrackballControls( camera );
-                controls.rotateSpeed = 1.2;
-                controls.zoomSpeed = 1.3;
-                controls.panSpeed = 0.8;
+                controls = { orientation: new THREE.DeviceOrientationControls( camera ), track: new THREE.TrackballControls( camera )};
+                controls.track.rotateSpeed = 1.2;
+                controls.track.zoomSpeed = 1.3;
+                controls.track.panSpeed = 0.8;
                 controls.noZoom = false;
                 controls.noPan = false;
                 controls.staticMoving = true;
@@ -113,7 +112,7 @@
                 stats.update();
             }
             function render() {
-                controls.update();
+                controls.track.update();
                 renderer.render( scene, camera );
             }
         </script>
