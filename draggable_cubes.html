@@ -33,7 +33,7 @@
                 //add
                 var animate = function(){
                     window.requestAnimationFrame( animate );
-                    controls.orientation.update();
+                    controls.track.update();
                     renderer.render(scene, camera);
                 };
                 
@@ -112,7 +112,7 @@
                 stats.update();
             }
             function render() {
-                controls.track.update();
+                controls.orientation.update();
                 renderer.render( scene, camera );
             }
         </script>
