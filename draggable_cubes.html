@@ -29,7 +29,7 @@
                 container = document.createElement( 'div' );
                 document.body.appendChild( container );
                 camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 1, 10000 );
-                camera.position.z = 100;
+                camera.position.z = 1000;
                 //add
                 var animate = function(){
                     window.requestAnimationFrame( animate );
@@ -42,10 +42,10 @@
                 controls.track.rotateSpeed = 1.2;
                 controls.track.zoomSpeed = 1.3;
                 controls.track.panSpeed = 0.8;
-                controls.noZoom = false;
-                controls.noPan = false;
-                controls.staticMoving = true;
-                controls.dynamicDampingFactor = 0.3;
+                controls.track.noZoom = false;
+                controls.track.noPan = false;
+                controls.track.staticMoving = true;
+                controls.track.dynamicDampingFactor = 0.3;
 
                 //scene
                 scene = new THREE.Scene();
