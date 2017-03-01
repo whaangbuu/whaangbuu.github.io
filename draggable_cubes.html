@@ -55,7 +55,7 @@
                 light.shadow.mapSize.height = 2048;
                 scene.add( light );
                 var geometry = new THREE.BoxGeometry( 40, 40, 40 );
-                for ( var i = 0; i < 20; i ++ ) {
+                for ( var i = 0; i < 200; i ++ ) {
                     var object = new THREE.Mesh( geometry, new THREE.MeshLambertMaterial( { color: Math.random() * 0xffffff } ) );
                     object.position.x = Math.random() * 1000 - 500;
                     object.position.y = Math.random() * 600 - 300;
